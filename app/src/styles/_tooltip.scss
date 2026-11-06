@@ -1,3 +1,9 @@
+// The force-mounted tooltip content keeps its popper wrapper in the DOM after the
+// tooltip closes, so the wrapper must never swallow clicks meant for elements underneath.
+[data-reka-popper-content-wrapper]:has(.tooltip) {
+	pointer-events: none;
+}
+
 .tooltip {
 	--tooltip-foreground-color: var(--foreground-inverted);
 	--tooltip-background-color: var(--background-inverted);
